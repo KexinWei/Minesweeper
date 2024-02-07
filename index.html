@@ -10,10 +10,7 @@
       (async function () {
         await cheerpjInit();
         cheerpjCreateDisplay(1200, 900);
-
-        // Dynamically determine the base URL
-        const basePath = window.location.pathname.includes('Minesweeper') ? '/Minesweeper/app/' : '/app/';
-        await cheerpjRunJar(basePath + "Minesweeper.jar");
+        await cheerpjRunJar("Minesweeper.jar");
       })();
     </script>
 </body>
