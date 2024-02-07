@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <title>CheerpJ test</title>
     <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <script>
       (async function () {
         await cheerpjInit();
         cheerpjCreateDisplay(1200, 900);
-        await cheerpjRunJar("/app/Minesweeper.jar");
+
+        // Dynamically determine the base URL
+        const basePath = window.location.pathname.includes('Minesweeper') ? '/Minesweeper/app/' : '/app/';
+        await cheerpjRunJar(basePath + "Minesweeper.jar");
       })();
     </script>
-  </body>
+</body>
 </html>
